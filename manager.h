@@ -6,4 +6,4 @@ int openfile(product *list); // 저장된 리스트파일을 불러오는 함수
 
 void searchName(product* p, int count); // 원하는 제품명을 검색하는 함수
 void searchstar(product* p, int count); // 원하는 별점의 제품을 검색하는 함수
-void searchpri(product* p, int count); // 원하는 가격의 제품을 검색하는 함
+void searchpri(product* p, int count); // 원하는 가격의 제품을 검색하는 함수
