@@ -14,6 +14,9 @@ int main(){
         int menu, count = 0;
 	int index = 0;
 
+	count = openfile(plist);
+	index = count;
+	
         while(1){
                 menu = selectMenu();
                 if(menu == 0) break;
@@ -50,6 +53,9 @@ int main(){
                         	listproduct(plist, index);
 			}
                 }
+		else if(menu == 6){
+			filesave(plist, index);
+		}
         }
         return 0;
 }

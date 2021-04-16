@@ -18,3 +18,43 @@ int selectDataNo(product p[], int count){ // 제품 리스트중에 원하는 �
  	scanf("%d", &no);
  	return no;
 }
+
+void filesave(product *list, int n){ // 리스트를 저장하는 함수
+	FILE* pfile = fopen("fruits.txt", "wt");
+	for(int i=0; i<n; i++){
+		if(list[i].price == -1) continue;
+		fprintf(pfile, "%s\n", list[i].name);
+		fprintf(pfile, "%d ", list[i].weight);
+		fprintf(pfile, "%d ", list[i].price);
+		fprintf(pfile, "%d ", list[i].star);
+		fprintf(pfile, "%d ", list[i].star_num);
+		fprintf(pfile, "%d ", list[i].star_total);
+		fprintf(pfile, "\n");
+	}
+	printf("==> 저장됨!\n");
+	fclose(pfile);
+}
+int openfile(product *list){ // 저장된 리스트파일을 불러오는 함수
+	FILE* pfile = fopen("fruits.txt", "rt");
+	if(pfile == NULL){
+		printf("==> 파일이 없습니다\n");
+		return 0;
+	}
+	printf("==> 로딩중...\n");
+	int i=0;
+	for(; i<100; i++){
+		fscanf(pfile, " %[^\n]s", list[i].name);
+                if(feof(pfile)) break;
+		fscanf(pfile, " %d", &list[i].weight);
+                fscanf(pfile, " %d", &list[i].price);
+                fscanf(pfile, " %d", &list[i].star);
+                fscanf(pfile, " %d", &list[i].star_num);
+                fscanf(pfile, " %d", &list[i].star_total);
+	}
+	printf("==> 로딩 성공!\n");
+	fclose(pfile);
+	return i;
+}
+//void searchName(product* p, int count); // 원하는 제품명을 검색하는 함수
+//void searchstar(product* p, int count); // 원하는 별점의 제품을 검색하는 함수
+//void searchpri(product* p, int count); // 원하는 가격의 제품을 검색하는 함
