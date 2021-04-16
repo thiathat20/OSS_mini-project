@@ -55,6 +55,13 @@ int openfile(product *list){ // 저장된 리스트파일을 불러오는 함수
 	fclose(pfile);
 	return i;
 }
-//void searchName(product* p, int count); // 원하는 제품명을 검색하는 함수
+void searchName(product* p, int count){ // 원하는 제품명을 검색하는 함수
+	char name[100] = {0};
+	printf("==> 원하는 제품명을 입력 하세요: ");
+	scanf("%s", name);
+	for(int i=0; ;i++){
+		if(name == p[i].name)
+	}
+}
 //void searchstar(product* p, int count); // 원하는 별점의 제품을 검색하는 함수
 //void searchpri(product* p, int count); // 원하는 가격의 제품을 검색하는 함
