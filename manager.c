@@ -73,8 +73,7 @@ void searchName(product* p, int count){ // 원하는 제품명을 검색하는 �
 		}
 	}
 	if(flag == 1) printf("==>검색 성공!\n");
-	else if(flag == 0) printf("==>검색 결과 없음\n");
-	else printf("*** err: 이름 검색 ***\n");
+	else printf("==>검색 결과 없음\n");
 }
 
 void searchstar(product* p, int count){ // 원하는 별점의 제품을 검색하는 함수
@@ -96,7 +95,35 @@ void searchstar(product* p, int count){ // 원하는 별점의 제품을 검색�
                 return;
         }
         if(flag == 1) printf("==>검색 성공!\n");
-        else if(flag == 0) printf("==>검색 결과 없음\n");
-        else printf("*** err: 별점 검색 ***\n");
+        else printf("==>검색 결과 없음\n");
 }
-//void searchpri(product* p, int count); // 원하는 가격의 제품을 검색하는 함
+void searchpri(product* p, int count){ // 원하는 가격의 제품을 검색하는 함수
+	int min = 0, max = 0;
+	int flag = 0;
+	printf("최소 가격은(원)?(취소: -1): \n");
+	scanf("%d", &min);
+	if (min == -1){
+		printf("==>취소됨\n");
+		return;
+	}
+	printf("최대 가격은(원)?(취소: -1): \n");
+        scanf("%d", &max);
+	printf("\n");
+	if (max == -1){
+                printf("==>취소됨\n");
+                return;
+        }
+	else if(max<min){
+		printf("==>잘못된 입력!\n");
+		return;
+	}
+	for(int i=0; i<count; i++){
+		if(min <= p[i].price && p[i].price <= max){
+                	printf("NO.%d) \n", i+1);
+                        readproduct(p[i]);
+                        flag = 1;
+                }
+	}
+	if(flag == 1) printf("==>검색 성공!\n");
+        else printf("==>검색 결과 없음\n");
+}

@@ -66,7 +66,7 @@ int main(){
                         searchstar(plist, index);
                 }
 		else if(menu == 9){
-                        //searchpri(plist, index);
+                        searchpri(plist, index);
                 }
         }
         return 0;
