@@ -1,0 +1,8 @@
+wow cherry ver3
+10 13000 4 3 14 
+apple
+500 10000 0 0 0 
+apple ver3
+500 15000 0 0 0 
+mellon
+500 10000 0 0 0 
