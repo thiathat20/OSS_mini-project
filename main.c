@@ -20,8 +20,11 @@ int main(){
         while(1){
                 menu = selectMenu();
                 if(menu == 0) break;
-                if(menu == 1 || menu ==3 || menu == 4 || menu ==5)
-                        if(count == 0) continue;
+                if(menu == 1 || menu ==3 || menu == 4 || menu ==5 || menu == 6 || menu == 7 || menu == 8 || menu == 9)
+                        if(count == 0){
+				printf("err: 상품 목록이 없습니다.\n");
+				continue;
+			}
                 if(menu == 1){
                         listproduct(plist, index);
                 }
@@ -56,6 +59,15 @@ int main(){
 		else if(menu == 6){
 			filesave(plist, index);
 		}
+		else if(menu == 7){
+			searchName(plist, index);
+		}
+		else if(menu == 8){
+                        //searchstar(plist, index);
+                }
+		else if(menu == 9){
+                        //searchpri(plist, index);
+                }
         }
         return 0;
 }
