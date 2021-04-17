@@ -63,7 +63,7 @@ int main(){
 			searchName(plist, index);
 		}
 		else if(menu == 8){
-                        //searchstar(plist, index);
+                        searchstar(plist, index);
                 }
 		else if(menu == 9){
                         //searchpri(plist, index);

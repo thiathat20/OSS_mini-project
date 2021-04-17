@@ -76,5 +76,26 @@ void searchName(product* p, int count){ // 원하는 제품명을 검색하는 �
 	else if(flag == 0) printf("==>검색 결과 없음\n");
 	else printf("*** err: 이름 검색 ***\n");
 }
-//void searchstar(product* p, int count); // 원하는 별점의 제품을 검색하는 함수
+void searchstar(product* p, int count){ // 원하는 별점의 제품을 검색하는 함수
+	int star = 0;
+        printf("==> 원하는 별점을 입력 하세요(0~5점)(취소:0~5 이외의 다른 숫자): ");
+        scanf("%d", &star);
+	int flag = 0;
+        if(0 <= star && star <= 5){
+        	for(int i=0; i<count; i++){
+                	if(p[i].star == star){
+                        	printf("NO.%d) \n", i+1);
+                        	readproduct(p[i]);
+                        	flag = 1;
+                	}
+        	}
+	}
+	else{
+                printf("==> 취소되었습니다.\n");
+                return;
+        }
+        if(flag == 1) printf("==>검색 성공!\n");
+        else if(flag == 0) printf("==>검색 결과 없음\n");
+        else printf("*** err: 별점 검색 ***\n");
+}
 //void searchpri(product* p, int count); // 원하는 가격의 제품을 검색하는 함
