@@ -76,6 +76,7 @@ void searchName(product* p, int count){ // 원하는 제품명을 검색하는 �
 	else if(flag == 0) printf("==>검색 결과 없음\n");
 	else printf("*** err: 이름 검색 ***\n");
 }
+
 void searchstar(product* p, int count){ // 원하는 별점의 제품을 검색하는 함수
 	int star = 0;
         printf("==> 원하는 별점을 입력 하세요(0~5점)(취소:0~5 이외의 다른 숫자): ");
