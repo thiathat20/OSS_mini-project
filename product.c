@@ -10,6 +10,9 @@ int selectMenu(){ // 원하는 기능을 선택하는 함수
         printf("4. 삭제\n");
 	printf("5. 별점 입력\n");
 	printf("6. 리스트 저장\n");
+	printf("7. 이름 검색\n");
+	printf("8. 별점 검색\n");
+	printf("9. 가격 검색\n");
         printf("0. 종료\n\n");
         printf("=> 원하는 메뉴는? ");
         scanf("%d", &menu);
